@@ -4,63 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BCF Top Questions</title>
+    <title>BootCampFu</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/question-page.css">
-
 </head>
+
+<nav>
+    <div class="logo" id="mobile"><a href="/" class="home-redirect">BCF</a></div>
+    <div class="logo" id="desktop"><a href="/" class="home-redirect">BootCampFu</a></div>
+    <div class="search-div">
+        <input id="search" placeholder="Search">
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="login-div">
+        <button class="nav-button" id="signup-login-btn">Sign Up</button>
+        <button class="nav-button" id="login-btn">Log In</button>
+        <button class="nav-button" id="logout-btn">Log Out</button>
+    </div>
+</nav>
 
 <body>
 
-    <nav>
-        <div class="logo">BCF</div>
-        <div class="search-div">
-            <input id="search" placeholder="Search">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
+<div class="answer-list">
+    <h1>Answers</h1>
+
+
+    <div class="answers">
+        <div class="upvotes-div">
+            <i class="fas fa-chevron-up fa-lg upvote"></i>
+            <p class="upvotes-num">0</p> <!--templating-->
+            <i class="fas fa-chevron-down fa-lg downvote"></i>
         </div>
-        <div class="login-div">
-            <button id="signup-login-btn"><i class="fas fa-sign-in-alt"></i></button>
+        <!--below will all use templating-->
+        <div class="answer-content-div">
+            <p class="quote">My computer hates me. I think it's a virus. All of my JS files say "idiot."</p>
+            <p class="answer-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim maxime provident totam... </p>
+            <p class="author-info">Answered by:</p>
+            <p class="author">Billy Bob</p>
         </div>
-    </nav>
-
-    
-    <div class="question-page">
-        <div class="question">
-            <h1>My CSS keeps making my computer catch on fire</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <br> <br>
-
-        <div class="answer-post">
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, blah blah.</p>
-        </div>
-
-        <div class="answer-post">
-                <hr>
-                <p>What he said.</p>
-            </div>
-
-        <section class="reply-section">
-            <h1>Write a response</h1>
-           
-            <p class="form-para">
-                User Name:
-                <input id="answer-username" placeholder="User name here">
-            </p>
-            <p class="form-para">
-                Answer:<br>
-                <textarea id="answer-body" placeholder="Start crying"></textarea>
-            </p>
-            <p class="form-para">
-                <button id="submit-custom-answer-btn">Done!!!</button>
-            </p>
-        </section>
     </div>
-    
+   
+   
+</div>
 
 </body>
-</html>
+
+<footer>
+    Copyright &copy; 2019
+</footer>
 

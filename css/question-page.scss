@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
-
 $colors: (
     nav: #fafafb,
     primary: #fff,
@@ -18,7 +17,23 @@ $inputpadding: 5px;
     @return map-get($colors, $color-name);
 }
 
-body { 
+
+$tablet: 768px;
+$desktop: 920px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body {
     margin: 0;
     padding: 0;
     font-family: "Roboto Condensed", sans-serif;
@@ -33,20 +48,65 @@ body {
         border-top: 2px solid color(border);
         border-bottom: 2px solid rgb(233, 231, 231);
         z-index: 999;
-
+    
         .logo {
             margin-top: 16px;
             margin-right:auto;
             margin-left: 10px;
 
-            
+            .home-redirect:link {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:visited {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:hover{
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:active{
+                color: #111;
+                text-decoration: none;
+            }
         }
+
+        #mobile {
+
+            @include tablet {
+                display: none;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        #desktop {
+
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+
+            @include desktop {
+                display: block;
+            }
+
+        }
+
 
         .search-div {
             display: inline-block;
             margin-top: 10px;
             margin-left: auto;
             margin-right: 10px;
+        
 
             #search {
                 border: 1px solid color(input-border);
@@ -56,6 +116,7 @@ body {
                 margin-right: 5px;
                 padding-left: $inputpadding;
                 outline: none !important;
+                font-family: "Roboto Condensed", sans-serif;
 
             }
 
@@ -65,6 +126,7 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
@@ -81,64 +143,104 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
     }
 
-    .question-page {
+    .answer-list {
+
         margin-top: 75px;
-
-            h1 {
-                font-size: 1.5em;
-                font-weight: bold;
-                margin-top: 19.920px;
-                margin-bottom: 19.920px;
-            }
-    }
-
-    .question { 
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .answer-post {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .reply-section {
-        margin-left: 10px;
-      }
         
-       .reply-section .form-para #answer-username {
-        width: 280px;
-        height: 25px;
-        border-radius: 10px;
-        border: 1px solid lightgrey;
-        outline: none !important;
-        padding-left: 5px;
-        font-family: "Roboto Condensed", sans-serif;
-      }
-      
-       .reply-section .form-para #answer-body {
-        margin-top: 10px;
-        height: 100px;
-        width: 280px;
-        border-radius: 10px;
-        border: 1px solid lightgrey;
-        outline: none !important;
-        overflow: auto;
-        font-family: "Roboto Condensed", sans-serif;
-      }
-      
-       .reply-section .form-para #submit-custom-answer-btn {
-        height: 30px;
-        width: 100px;
-        border: none;
-        font-family: "Roboto Condensed", sans-serif;
-        background-color: #f48024;
-      }
 
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+            text-align: center;
+        }
+
+        .answers {
+            border-top: 2px solid rgb(233, 231, 231);
+            border-bottom: 2px solid rgb(233, 231, 231);
+            padding: 10px;
+            height: 150px;
+            position: relative;
+
+            //use js here depending on length of question
+            // .answer-body {
+            //     white-space: nowrap;
+            //     overflow: hidden;
+            //     text-overflow: ellipsis;
+            // }
+
+            .upvotes-div {
+
+                position: absolute;
+                top: 50%;
+                margin-top: -39.5px;
+
+                .upvote {
+                    cursor: pointer;
+                }
+                
+                .upvotes-num {
+                    font-size: 35px;
+                }
+
+                .downvote {
+                    cursor: pointer;
+                }
+                
+            }
+
+            .answer-content-div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -80px;
+                margin-top: -40px;
+
+                .question-title {
+                    margin-top: -20px;
+                }
+
+                .answer-body {
+                    margin-top: 20px;
+                }
+
+                .author {
+                    margin-top: 20px;
+                }
+
+                @include tablet {
+                    left: 10%;
+                    margin-left: 0;
+                    margin-top: -32px;
+
+                    .question-title {
+                        margin-top: -16px;
+                    }
+
+                    .answer-body {
+                        margin-top: 16px;
+                    }
+    
+                    .author {
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 10px;
+    }
 }
-

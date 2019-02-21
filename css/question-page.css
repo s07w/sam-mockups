@@ -11,7 +11,7 @@ body nav {
   display: -ms-flexbox;
   display: flex;
   top: 0;
-  width: 100%;
+  width: 100%;  
   height: 50px;
   background-color: #fafafb;
   border-top: 2px solid #0095ff;
@@ -23,6 +23,64 @@ body nav .logo {
   margin-top: 16px;
   margin-right: auto;
   margin-left: 10px;
+}
+
+body nav .logo .home-redirect:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:active {
+  color: #111;
+  text-decoration: none;
+}
+
+@media (mid-width: 320px) {
+ body nav #mobile {
+   display: none;
+ } 
+
+ body .answer-content-div {
+   margin-top: -10%;
+ }
+}
+
+@media (min-width: 768px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+body nav #desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #desktop {
+    display: block;
+  }
 }
 
 body nav .search-div {
@@ -40,6 +98,7 @@ body nav .search-div #search {
   margin-right: 5px;
   padding-left: 5px;
   outline: none !important;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 body nav .search-div #search-btn {
@@ -48,6 +107,7 @@ body nav .search-div #search-btn {
   width: 28px;
   border-radius: 10px;
   background-color: #f48024;
+  outline: none !important;
   cursor: pointer;
 }
 
@@ -63,60 +123,106 @@ body nav .login-div #signup-login-btn {
   width: 28px;
   border-radius: 10px;
   background-color: #f48024;
+  outline: none !important;
   cursor: pointer;
 }
 
-body .question-page {
+body .answer-list {
   margin-top: 75px;
 }
 
-body .question-page h1 {
+body .answer-list h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 19.920px;
   margin-bottom: 19.920px;
+  text-align: center;
 }
 
-body .question {
-  margin-left: 10px;
-  margin-right: 10px;
+body .answer-list .answers {
+  border-top: 2px solid #e9e7e7;
+  border-bottom: 2px solid #e9e7e7;
+  padding: 10px;
+  height: 150px;
+  position: relative;
 }
 
-body .answer-post {
-  margin-left: 10px;
-  margin-right: 10px;
+body .answer-list .answers .upvotes-div {
+  position: absolute;
+  top: 50%;
+  margin-top: -39.5px;
 }
 
-body .reply-section {
-  margin-left: 10px;
+body .answer-list .answers .upvotes-div .upvote {
+  cursor: pointer;
 }
 
-body .reply-section .form-para #answer-username {
-  width: 280px;
-  height: 25px;
-  border-radius: 10px;
-  border: 1px solid lightgrey;
-  outline: none !important;
-  padding-left: 5px;
-  font-family: "Roboto Condensed", sans-serif;
+body .answer-list .answers .upvotes-div .upvotes-num {
+  font-size: 35px;
 }
 
-body .reply-section .form-para #answer-body {
-  margin-top: 10px;
-  height: 100px;
-  width: 280px;
-  border-radius: 10px;
-  border: 1px solid lightgrey;
-  outline: none !important;
-  overflow: auto;
-  font-family: "Roboto Condensed", sans-serif;
+body .answer-list .answers .upvotes-div .downvote {
+  cursor: pointer;
 }
 
-body .reply-section .form-para #submit-custom-answer-btn {
-  height: 30px;
-  width: 100px;
-  border: none;
-  font-family: "Roboto Condensed", sans-serif;
-  background-color: #f48024;
+body .answer-list .answers .answer-content-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -80px;
+  margin-top: -40px;
 }
-/*# sourceMappingURL=question-page.css.map */
+
+body .answer-list .answers .answer-content-div .question-title {
+  margin-top: -20px;
+}
+
+body .answer-list .answers .answer-content-div .answer-body {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body .answer-list .answers .answer-content-div {
+  margin-top: 20px;
+}
+
+body .quote {
+  font-size: 90%;
+  background-color: #dcdcdc;
+
+}
+
+body .author-info{
+  color: grey;
+  font-size: 80%;
+  float: right;
+}
+
+body .author {
+  float: right;
+  margin-right: -65px;
+}
+
+@media (min-width: 768px) {
+  body .answer-list .answers .answer-content-div {
+    left: 10%;
+    margin-left: 0;
+    margin-top: -32px;
+  }
+  body .answer-list .answers .answer-content-div .question-title {
+    margin-top: -16px;
+  }
+  body .answer-list .answers .answer-content-div .answer-body {
+    margin-top: 16px;
+  }
+  body .answer-list .answers .answer-content-div .author {
+    margin-top: 16px;
+  }
+}
+
+body footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 10px;
+}
+/*# sourceMappingURL=question-list.css.map */
